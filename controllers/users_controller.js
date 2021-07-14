@@ -23,3 +23,12 @@ module.exports.signIn = function(req, res){
     });
 }
 
+//Get the signup data
+module.exports.create = function(req, res){
+    //TODO Later
+}
+
+//Sign In and create a session for the user
+module.exports.createSession = function(req, res){
+    //TODO Later
+}
