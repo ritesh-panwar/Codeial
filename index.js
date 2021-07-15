@@ -9,6 +9,11 @@ const expressLayouts = require('express-ejs-layouts');
 //importing db
 const db = require('./config/mongoose');
 
+//Passport JS
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+
 //Accessing static files
 app.use(express.static('./assets'));
 
@@ -22,12 +27,27 @@ app.use(express.urlencoded());
 
 app.use(cookieParser());
 
-//use express router
-app.use('/', require('./routes'));
-
 //setting up view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+//Setting up passport js
+app.use(session({
+    name: 'Codeial',
+    //TODO: Change the secret before deployment 
+    secret: 'HailCodeial',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (100*60*100)
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//use express router
+app.use('/', require('./routes'));
 
 app.listen(port, function(err){
     if(err){
