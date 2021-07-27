@@ -1,0 +1,22 @@
+footer {
+    background-color: rgb(78, 78, 78);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    p{
+        margin-left: 1rem;
+        margin-top: 1.5rem;
+    }
+    ul{ 
+        list-style: none;
+        li{
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,22 @@
+header {
+    color: white;
+    background-color: rgb(15, 125, 228);
+    display: flex;
+    justify-content: space-between;
+    h2 {
+        margin-left: 1rem;
+    }
+    ul {
+        list-style: none;
+        li{
+            margin-top: 0.5rem;
+            display: inline-block;
+            a{
+                color: white;
+                text-decoration: none;
+                margin-right: 1rem;
+            }
+        }
+    }
+    
+}
