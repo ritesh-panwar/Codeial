@@ -4,13 +4,15 @@
             <%= title %>
         </title>
         <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
         <!-- extract style from sub-pages into the layout -->
         <%- style %>  
     </head>
     <body>
          <!-- Inserting Header layout -->
          <%- include('_header'); %>
-
+        
          <!-- Variable body part -->
          <%- body %>
 
