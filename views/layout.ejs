@@ -3,10 +3,13 @@
         <title>
             <%= title %>
         </title>
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
         <link rel="stylesheet" href="/css/layout.css">
         <link rel="stylesheet" href="/css/header.css">
         <link rel="stylesheet" href="/css/footer.css">
+       
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <!-- extract style from sub-pages into the layout -->
         <%- style %>  
@@ -14,7 +17,9 @@
     <body>
          <!-- Inserting Header layout -->
          <%- include('_header'); %>
-        
+
+         
+
          <div id="body-div">
          <!-- Variable body part -->
          <%- body %>
@@ -24,5 +29,28 @@
         
          <!-- extract scripts from sub-pages into the layout -->
          <%- script %>
+
+         <script>
+             <% if(flash.success && flash.success.length > 0){ %>
+                new Noty({
+                    theme: 'relax',
+                    text: '<%= flash.success %>',
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %>
+            
+            <% if(flash.error && flash.error.length > 0){ %>
+                new Noty({
+                    theme: 'relax',
+                    text: '<%= flash.error %>',
+                    type: 'error',
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %>
+            
+         </script>
     </body>
 </html>
