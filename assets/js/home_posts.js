@@ -11,7 +11,9 @@
                 data: newPostForm.serialize(),
                 success: function(data){
                     let newPost = newPostDom(data.data.post);
+                    //console.log($.noty.get(newPost.id));
                     $('#posts-list-container>ul').prepend(newPost);
+                    
                     deletePost($(' .delete-post-button', newPost));
                 }, error: function(error){
                     console.log(error.responseText);
@@ -63,6 +65,7 @@
                 url: $(deleteLink).prop('href'),
                 success: function(data){
                     $(`#post-${data.data.post_id}`).remove();
+                
                 }, error: function(err){
                     console.log(error.responseText);
                 }
