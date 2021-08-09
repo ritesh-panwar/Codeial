@@ -22,4 +22,8 @@ router.post('/create-session', passport.authenticate(
 //route for sign-out
 router.get('/sign-out', userController.destroySession);
 
+//Google Authentication routes
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), userController.createSession);
+
 module.exports = router;
