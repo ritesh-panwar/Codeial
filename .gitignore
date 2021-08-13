@@ -1,1 +1,3 @@
 node_modules/
+config/nodemailer.js
+config/passport-google-oauth2-strategy.js
