@@ -1,0 +1,15 @@
+footer {
+  background-color: #4e4e4e;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex; }
+  footer p {
+    margin-left: 1rem;
+    margin-top: 1.5rem; }
+  footer ul {
+    list-style: none; }
+    footer ul li a {
+      text-decoration: none;
+      color: white; }
